@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hugo tranquilpeak theme</title>
-    <link>https://modeyang.github.io/post/</link>
-    <description>Recent content in Posts on Hugo tranquilpeak theme</description>
+    <title>Query on Hugo tranquilpeak theme</title>
+    <link>https://modeyang.github.io/tags/query/</link>
+    <description>Recent content in Query on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Apr 2018 18:52:26 +0800</lastBuildDate>
     
-	<atom:link href="https://modeyang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://modeyang.github.io/tags/query/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,15 +23,6 @@ GET /_search { &amp;quot;query&amp;quot;: { &amp;quot;bool&amp;quot;: { &amp;quo
 默认çanalyzer的工作原理： 1. drops most punctuation
 2. breaks up text into individual words, and lower cases them
 例如： “Quick Brown Fox!” into the terms [quick, brown, fox].</description>
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>https://modeyang.github.io/2018/04/first/</link>
-      <pubDate>Mon, 16 Apr 2018 17:49:39 +0800</pubDate>
-      
-      <guid>https://modeyang.github.io/2018/04/first/</guid>
-      <description> Hello Hugo  test hugo  </description>
     </item>
     
   </channel>

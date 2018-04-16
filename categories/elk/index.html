@@ -18,21 +18,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.39 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Markdown</title>
+    <title>Elk</title>
     <meta name="author" content="Genxing Yang">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://modeyang.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://modeyang.github.io/tags/markdown/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://modeyang.github.io/categories/elk/index.xml">
     
 
     
     <meta name="description" content="Hugo tranquilpeak theme demo">
     <meta property="og:description" content="Hugo tranquilpeak theme demo">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Markdown">
-    <meta property="og:url" content="/tags/markdown/">
+    <meta property="og:title" content="Elk">
+    <meta property="og:url" content="/categories/elk/">
     <meta property="og:site_name" content="Hugo tranquilpeak theme">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Hugo tranquilpeak theme">
@@ -218,14 +218,14 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://modeyang.github.io/2018/04/first/">
-          First
+        <a class="link-unstyled" href="https://modeyang.github.io/2018/04/es_dsl/">
+          Es_dsl
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-04-16T17:49:39&#43;08:00">
+      <time itemprop="datePublished" datetime="2018-04-16T18:52:26&#43;08:00">
         
   四月 16, 2018
 
@@ -236,7 +236,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://modeyang.github.io/categories/blog">blog</a>
+      <a class="category-link" href="https://modeyang.github.io/categories/elk">ELK</a>
     
   
 
@@ -244,9 +244,14 @@
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-       Hello Hugo  test hugo  
+      1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].
       <p>
-        <a href="https://modeyang.github.io/2018/04/first/" class="postShorten-excerpt_link link">阅读全文</a>
+        <a href="https://modeyang.github.io/2018/04/es_dsl/" class="postShorten-excerpt_link link">阅读全文</a>
         
       </p>
     </div>

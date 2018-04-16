@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 17:49:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Apr 2018 18:52:26 +0800</lastBuildDate>
     
 	<atom:link href="https://modeyang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>https://modeyang.github.io/tags/elasticsearch/</link>
+      <pubDate>Mon, 16 Apr 2018 18:52:26 +0800</pubDate>
+      
+      <guid>https://modeyang.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Html Elements</title>
@@ -26,6 +35,15 @@
       <pubDate>Mon, 16 Apr 2018 17:49:39 +0800</pubDate>
       
       <guid>https://modeyang.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Query</title>
+      <link>https://modeyang.github.io/tags/query/</link>
+      <pubDate>Mon, 16 Apr 2018 18:52:26 +0800</pubDate>
+      
+      <guid>https://modeyang.github.io/tags/query/</guid>
       <description></description>
     </item>
     

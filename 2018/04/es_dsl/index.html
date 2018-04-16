@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.39 with theme Tranquilpeak 0.4.3-BETA">
-    <title>First</title>
+    <title>Es_dsl</title>
     <meta name="author" content="Genxing Yang">
     <meta name="keywords" content="">
 
@@ -30,15 +30,30 @@
     
 
     
-    <meta name="description" content=" Hello Hugo  test hugo  ">
-    <meta property="og:description" content=" Hello Hugo  test hugo  ">
+    <meta name="description" content="1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].">
+    <meta property="og:description" content="1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="First">
-    <meta property="og:url" content="/2018/04/first/">
+    <meta property="og:title" content="Es_dsl">
+    <meta property="og:url" content="/2018/04/es_dsl/">
     <meta property="og:site_name" content="Hugo tranquilpeak theme">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Hugo tranquilpeak theme">
-    <meta name="twitter:description" content=" Hello Hugo  test hugo  ">
+    <meta name="twitter:description" content="1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].">
     
     
 
@@ -203,13 +218,13 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      First
+      Es_dsl
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-04-16T17:49:39&#43;08:00">
+      <time itemprop="datePublished" datetime="2018-04-16T18:52:26&#43;08:00">
         
   四月 16, 2018
 
@@ -220,7 +235,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://modeyang.github.io/categories/blog">blog</a>
+      <a class="category-link" href="https://modeyang.github.io/categories/elk">ELK</a>
     
   
 
@@ -232,12 +247,219 @@
             <div class="main-content-wrap">
               
 
-<h3 id="hello-hugo">Hello Hugo</h3>
+<h1 id="1-term-query">1. Term query</h1>
 
-<ul>
-<li>test</li>
-<li>hugo</li>
-</ul>
+<p>用于精确查找在inverted index里面，如下面：</p>
+
+<pre><code class="language-bash">GET /_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;should&quot;: [
+        {
+          &quot;term&quot;: {
+            &quot;status&quot;: {
+              &quot;value&quot;: &quot;urgent&quot;,
+              &quot;boost&quot;: 2.0 
+            }
+          }
+        },
+        {
+          &quot;term&quot;: {
+            &quot;status&quot;: &quot;normal&quot; 
+          }
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<h2 id="1-1-原理">1.1 原理</h2>
+
+<p>String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。</p>
+
+<p>默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。</p>
+
+<p>默认çanalyzer的工作原理：
+1. drops most punctuation<br />
+2. breaks up text into individual words, and lower cases them</p>
+
+<p>例如： <strong>“Quick Brown Fox!”</strong> into the terms <strong>[quick, brown, fox]</strong>.</p>
+
+<p>所以对于term查询来说，是在inverted index中去å¯»找精确的term value，而不必去考虑字段的analyze情况，这个match查询正好相反。</p>
+
+<h1 id="2-terms-query">2. Terms Query</h1>
+
+<pre><code class="language-json">{
+    &quot;constant_score&quot; : {
+        &quot;filter&quot; : {
+            &quot;terms&quot; : { &quot;user&quot; : [&quot;kimchy&quot;, &quot;elasticsearch&quot;]}
+        }
+    }
+}
+</code></pre>
+
+<p>terms查询也叫作in， 当用于简单的filter时。</p>
+
+<h2 id="2-1-terms-查询机制">2.1 terms 查询机制</h2>
+
+<p>现在还不知道具体怎么用。
+A concrete example would be to filter tweets tweeted by your followers。</p>
+
+<pre><code class="language-bash"># index the information for user with id 2, specifically, its followers
+curl -XPUT localhost:9200/users/user/2 -d '{
+   &quot;followers&quot; : [&quot;1&quot;, &quot;3&quot;]
+}'
+
+# index a tweet, from user with id 1
+curl -XPUT localhost:9200/tweets/tweet/1 -d '{
+   &quot;user&quot; : &quot;1&quot;
+}'
+
+# search on all the tweets that match the followers of user 2
+curl -XGET localhost:9200/tweets/_search -d '{
+  &quot;query&quot; : {
+    &quot;terms&quot; : {
+      &quot;user&quot; : {
+        &quot;index&quot; : &quot;users&quot;,
+        &quot;type&quot; : &quot;user&quot;,
+        &quot;id&quot; : &quot;2&quot;,
+        &quot;path&quot; : &quot;followers&quot;
+      }
+    }
+  }
+}'
+</code></pre>
+
+<h1 id="3-range-query">3. Range Query</h1>
+
+<p>基于区间查询，根据字段类型来算，string类型属于TermRangeQuery, 而数字与时间类型为NumericRangeQuery.</p>
+
+<pre><code class="language-bash">{
+    &quot;range&quot; : {
+        &quot;age&quot; : {
+            &quot;gte&quot; : 10,
+            &quot;lte&quot; : 20,
+            &quot;boost&quot; : 2.0
+        }
+    }
+}
+
+## 基于时间
+{
+    &quot;range&quot; : {
+        &quot;date&quot; : {
+            &quot;gte&quot; : &quot;now-1d/d&quot;,
+            &quot;lt&quot; :  &quot;now/d&quot;
+        }
+    }
+}
+
+## 自定义时间格式区间查询
+{
+    &quot;range&quot; : {
+        &quot;born&quot; : {
+            &quot;gte&quot;: &quot;01/01/2012&quot;,
+            &quot;lte&quot;: &quot;2013&quot;,
+            &quot;format&quot;: &quot;dd/MM/yyyy||yyyy&quot;
+        }
+    }
+}
+</code></pre>
+
+<p>时间区间内容<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math">算法</a>.</p>
+
+<h1 id="4-exists-query">4. Exists Query</h1>
+
+<p>返回的documents中 field至少有一ä¸ªnon-null的值</p>
+
+<pre><code class="language-bash">{
+    &quot;exists&quot; : { &quot;field&quot; : &quot;user&quot; }
+}
+
+# missing 查询
+&quot;bool&quot;: {
+    &quot;must_not&quot;: {
+        &quot;exists&quot;: {
+            &quot;field&quot;: &quot;user&quot;
+        }
+    }
+}
+</code></pre>
+
+<h1 id="5-wildcard-query">5. Wildcard Query</h1>
+
+<pre><code class="language-bash"># 使用* ？做简单的字符替换查询
+{
+    &quot;wildcard&quot; : { &quot;user&quot; : { &quot;value&quot; : &quot;ki*y&quot;, &quot;boost&quot; : 2.0 } }
+}
+</code></pre>
+
+<h1 id="6-regexp-query">6. Regexp Query</h1>
+
+<pre><code class="language-bash">{
+    &quot;regexp&quot;:{
+        &quot;name.first&quot;: &quot;s.*y&quot;
+    }
+}
+</code></pre>
+
+<h1 id="7-fuzzy-query-https-www-elastic-co-guide-en-elasticsearch-reference-current-query-dsl-fuzzy-query-html">7. <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-fuzzy-query.html">Fuzzy Query</a></h1>
+
+<p>有点类似基于** Levenshtein edit distance**算法， +/- margin on numeric and date fields.</p>
+
+<pre><code class="language-bash">{
+    &quot;fuzzy&quot; : {
+        &quot;user&quot; : {
+            &quot;value&quot; :         &quot;ki&quot;,
+            &quot;boost&quot; :         1.0,
+            &quot;fuzziness&quot; :     2,
+            &quot;prefix_length&quot; : 0,
+            &quot;max_expansions&quot;: 100
+        }
+    }
+}
+
+# 基于数字区间  10 - 14之间
+{
+    &quot;fuzzy&quot; : {
+        &quot;price&quot; : {
+            &quot;value&quot; : 12,
+            &quot;fuzziness&quot; : 2
+        }
+    }
+}
+
+# 基于时间区间
+{
+    &quot;fuzzy&quot; : {
+        &quot;created&quot; : {
+            &quot;value&quot; : &quot;2010-02-05T12:05:07&quot;,
+            &quot;fuzziness&quot; : &quot;1d&quot;
+        }
+    }
+}
+</code></pre>
+
+<h1 id="8-type-query">8. Type Query</h1>
+
+<pre><code class="language-json">{
+    &quot;type&quot; : {
+        &quot;value&quot; : &quot;my_type&quot;
+    }
+}
+</code></pre>
+
+<h1 id="9-ids-query">9. Ids Query</h1>
+
+<pre><code class="language-json">{
+    &quot;ids&quot; : {
+        &quot;type&quot; : &quot;my_type&quot;,
+        &quot;values&quot; : [&quot;1&quot;, &quot;4&quot;, &quot;100&quot;]
+    }
+}
+</code></pre>
 
               
             </div>
@@ -250,9 +472,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://modeyang.github.io/tags/html-elements/">html elements</a>
+  <a class="tag tag--primary tag--small" href="https://modeyang.github.io/tags/elasticsearch/">elasticsearch</a>
 
-  <a class="tag tag--primary tag--small" href="https://modeyang.github.io/tags/markdown/">markdown</a>
+  <a class="tag tag--primary tag--small" href="https://modeyang.github.io/tags/query/">query</a>
 
                   </div>
                 
@@ -265,7 +487,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://modeyang.github.io/2018/04/es_dsl/" data-tooltip="Es_dsl">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -273,7 +495,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://modeyang.github.io/2018/04/first/" data-tooltip="First">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -291,7 +513,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://modeyang.github.io/2018/04/first/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://modeyang.github.io/2018/04/es_dsl/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -339,7 +561,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://modeyang.github.io/2018/04/es_dsl/" data-tooltip="Es_dsl">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -347,7 +569,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://modeyang.github.io/2018/04/first/" data-tooltip="First">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -365,7 +587,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://modeyang.github.io/2018/04/first/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://modeyang.github.io/2018/04/es_dsl/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -395,7 +617,7 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fmodeyang.github.io%2F2018%2F04%2Ffirst%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fmodeyang.github.io%2F2018%2F04%2Fes_dsl%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -548,9 +770,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/modeyang.github.io\/2018\/04\/first\/';
+          this.page.url = 'https:\/\/modeyang.github.io\/2018\/04\/es_dsl\/';
           
-            this.page.identifier = '\/2018\/04\/first\/'
+            this.page.identifier = '\/2018\/04\/es_dsl\/'
           
         };
         (function() {

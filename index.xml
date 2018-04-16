@@ -6,10 +6,24 @@
     <description>Recent content on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 17:49:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Apr 2018 18:52:26 +0800</lastBuildDate>
     
 	<atom:link href="https://modeyang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Es_dsl</title>
+      <link>https://modeyang.github.io/2018/04/es_dsl/</link>
+      <pubDate>Mon, 16 Apr 2018 18:52:26 +0800</pubDate>
+      
+      <guid>https://modeyang.github.io/2018/04/es_dsl/</guid>
+      <description>1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &amp;quot;query&amp;quot;: { &amp;quot;bool&amp;quot;: { &amp;quot;should&amp;quot;: [ { &amp;quot;term&amp;quot;: { &amp;quot;status&amp;quot;: { &amp;quot;value&amp;quot;: &amp;quot;urgent&amp;quot;, &amp;quot;boost&amp;quot;: 2.0 } } }, { &amp;quot;term&amp;quot;: { &amp;quot;status&amp;quot;: &amp;quot;normal&amp;quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].</description>
+    </item>
     
     <item>
       <title>First</title>

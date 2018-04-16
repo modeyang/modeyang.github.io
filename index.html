@@ -215,6 +215,65 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://modeyang.github.io/2018/04/es_dsl/">
+          Es_dsl
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-04-16T18:52:26&#43;08:00">
+        
+  四月 16, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://modeyang.github.io/categories/elk">ELK</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].
+      <p>
+        <a href="https://modeyang.github.io/2018/04/es_dsl/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://modeyang.github.io/2018/04/first/">
           First
         </a>
@@ -315,6 +374,28 @@
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://modeyang.github.io/2018/04/es_dsl/">
+                <h3 class="media-heading">Es_dsl</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">1. Term query 用于精确查找在inverted index里面，如下面：
+GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
+默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
+默认çanalyzer的工作原理： 1. drops most punctuation
+2. breaks up text into individual words, and lower cases them
+例如： “Quick Brown Fox!” into the terms [quick, brown, fox].</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://modeyang.github.io/2018/04/first/">
                 <h3 class="media-heading">First</h3>
               </a>
@@ -336,7 +417,7 @@
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         1 posts found
+         2 posts found
       </p>
     </div>
   </div>
