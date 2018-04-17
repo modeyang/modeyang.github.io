@@ -17,9 +17,7 @@
       <pubDate>Mon, 16 Apr 2018 18:52:26 +0800</pubDate>
       
       <guid>https://modeyang.github.io/2018/04/elasticsearch-dsl%E6%9F%A5%E8%AF%A2/</guid>
-      <description>&lt;h1 id=&#34;dsl-介绍&#34;&gt;DSL 介绍&lt;/h1&gt;
-
-&lt;ul&gt;
+      <description>&lt;ul&gt;
 &lt;li&gt;这个才是实际最常用的方式，可以构建复杂的查询条件。&lt;/li&gt;
 &lt;li&gt;不用一开始就想着怎样用 Java Client 端去调用 Elasticsearch 接口。DSL 会了，Client 的也只是用法问题而已。&lt;/li&gt;
 &lt;/ul&gt;
