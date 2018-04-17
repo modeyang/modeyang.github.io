@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://modeyang.github.io/2018/04/metaclass/</loc>
+    <lastmod>2018-04-17T00:53:25+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://modeyang.github.io/2018/04/es_dsl/</loc>
     <lastmod>2018-04-16T18:52:26+08:00</lastmod>
   </url>
@@ -54,7 +59,7 @@
   
   <url>
     <loc>https://modeyang.github.io/</loc>
-    <lastmod>2018-04-16T18:52:26+08:00</lastmod>
+    <lastmod>2018-04-17T00:53:25+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,8 +70,26 @@
   </url>
   
   <url>
+    <loc>https://modeyang.github.io/tags/metaclass/</loc>
+    <lastmod>2018-04-17T00:53:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://modeyang.github.io/post/</loc>
-    <lastmod>2018-04-16T18:52:26+08:00</lastmod>
+    <lastmod>2018-04-17T00:53:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://modeyang.github.io/tags/python/</loc>
+    <lastmod>2018-04-17T00:53:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://modeyang.github.io/categories/python/</loc>
+    <lastmod>2018-04-17T00:53:25+08:00</lastmod>
     <priority>0</priority>
   </url>
   
