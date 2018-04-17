@@ -25,26 +25,28 @@
     </item>
     
     <item>
-      <title>Es_dsl</title>
-      <link>https://modeyang.github.io/2018/04/es_dsl/</link>
+      <title>Elasticsearch-dsl查询</title>
+      <link>https://modeyang.github.io/2018/04/elasticsearch-dsl%E6%9F%A5%E8%AF%A2/</link>
       <pubDate>Mon, 16 Apr 2018 18:52:26 +0800</pubDate>
       
-      <guid>https://modeyang.github.io/2018/04/es_dsl/</guid>
-      <description>1. Term query 用于精确查找在inverted index里面，如下面：
-GET /_search { &amp;quot;query&amp;quot;: { &amp;quot;bool&amp;quot;: { &amp;quot;should&amp;quot;: [ { &amp;quot;term&amp;quot;: { &amp;quot;status&amp;quot;: { &amp;quot;value&amp;quot;: &amp;quot;urgent&amp;quot;, &amp;quot;boost&amp;quot;: 2.0 } } }, { &amp;quot;term&amp;quot;: { &amp;quot;status&amp;quot;: &amp;quot;normal&amp;quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
-默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
-默认çanalyzer的工作原理： 1. drops most punctuation
-2. breaks up text into individual words, and lower cases them
-例如： “Quick Brown Fox!” into the terms [quick, brown, fox].</description>
+      <guid>https://modeyang.github.io/2018/04/elasticsearch-dsl%E6%9F%A5%E8%AF%A2/</guid>
+      <description>&lt;h1 id=&#34;dsl-介绍&#34;&gt;DSL 介绍&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;这个才是实际最常用的方式，可以构建复杂的查询条件。&lt;/li&gt;
+&lt;li&gt;不用一开始就想着怎样用 Java Client 端去调用 Elasticsearch 接口。DSL 会了，Client 的也只是用法问题而已。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>First</title>
-      <link>https://modeyang.github.io/2018/04/first/</link>
+      <title>博客开始了!</title>
+      <link>https://modeyang.github.io/2018/04/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%A7%8B%E4%BA%86/</link>
       <pubDate>Mon, 16 Apr 2018 17:49:39 +0800</pubDate>
       
-      <guid>https://modeyang.github.io/2018/04/first/</guid>
-      <description> Hello Hugo  test hugo  </description>
+      <guid>https://modeyang.github.io/2018/04/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%A7%8B%E4%BA%86/</guid>
+      <description>Hello Hugo 今天开始正式使用github.io写博客了，将自己的整理和认为比较经典的文章通过这个博客按照自己的理解广而告之。</description>
     </item>
     
   </channel>

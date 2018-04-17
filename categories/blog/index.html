@@ -218,8 +218,8 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://modeyang.github.io/2018/04/first/">
-          First
+        <a class="link-unstyled" href="https://modeyang.github.io/2018/04/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%A7%8B%E4%BA%86/">
+          博客开始了!
         </a>
       </h1>
       
@@ -244,9 +244,9 @@
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-       Hello Hugo  test hugo  
+      Hello Hugo 今天开始正式使用github.io写博客了，将自己的整理和认为比较经典的文章通过这个博客按照自己的理解广而告之。
       <p>
-        <a href="https://modeyang.github.io/2018/04/first/" class="postShorten-excerpt_link link">阅读全文</a>
+        <a href="https://modeyang.github.io/2018/04/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%A7%8B%E4%BA%86/" class="postShorten-excerpt_link link">阅读全文</a>
         
       </p>
     </div>
@@ -340,20 +340,22 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://modeyang.github.io/2018/04/es_dsl/">
-                <h3 class="media-heading">Es_dsl</h3>
+              <a class="link-unstyled" href="https://modeyang.github.io/2018/04/elasticsearch-dsl%E6%9F%A5%E8%AF%A2/">
+                <h3 class="media-heading">Elasticsearch-dsl查询</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
                   Apr 4, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">1. Term query 用于精确查找在inverted index里面，如下面：
-GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { &quot;term&quot;: { &quot;status&quot;: { &quot;value&quot;: &quot;urgent&quot;, &quot;boost&quot;: 2.0 } } }, { &quot;term&quot;: { &quot;status&quot;: &quot;normal&quot; } } ] } } }  1.1 原理 String字段可以是analyzed（用于全文搜索）或者not_analyzed（用于精确查找）ï¼Exact values（如数字，日期或者not_analyzed字符串）放在inverted index中是他的本身值。
-默认的string字段是可分析的，因此string值首先会被analyzer分解成一系列的term, 然后加入到inverted index中。
-默认çanalyzer的工作原理： 1. drops most punctuation
-2. breaks up text into individual words, and lower cases them
-例如： “Quick Brown Fox!” into the terms [quick, brown, fox].</div>
+              <div class="media-content hide-xs font-merryweather"><h1 id="dsl-介绍">DSL 介绍</h1>
+
+<ul>
+<li>这个才是实际最常用的方式，可以构建复杂的查询条件。</li>
+<li>不用一开始就想着怎样用 Java Client 端去调用 Elasticsearch 接口。DSL 会了，Client 的也只是用法问题而已。</li>
+</ul>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -362,15 +364,15 @@ GET /_search { &quot;query&quot;: { &quot;bool&quot;: { &quot;should&quot;: [ { 
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://modeyang.github.io/2018/04/first/">
-                <h3 class="media-heading">First</h3>
+              <a class="link-unstyled" href="https://modeyang.github.io/2018/04/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%A7%8B%E4%BA%86/">
+                <h3 class="media-heading">博客开始了!</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
                   Apr 4, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"> Hello Hugo  test hugo  </div>
+              <div class="media-content hide-xs font-merryweather">Hello Hugo 今天开始正式使用github.io写博客了，将自己的整理和认为比较经典的文章通过这个博客按照自己的理解广而告之。</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
